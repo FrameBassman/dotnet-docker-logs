@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Serilog.AspNetCore" Version="6.1.1-dev-00295" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="4.0.0-dev-00499" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.1-dev-00947" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+</Project>

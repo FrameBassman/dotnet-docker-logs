@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./DotnetDockerLogs.Api
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - 80:80
+#    volumes:
+#      - .:/app/logs:rw
+    tty: true
