@@ -15,11 +15,6 @@ FROM build AS publish
 RUN dotnet publish "DotnetDockerLogs.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-#RUN addgroup wheel && \
-#    adduser --system --disabled-password --ingroup wheel deployer 
-#USER deployer
-#WORKDIR /home/deployer/app
-#COPY --chown=deployer:wheel --from=publish /app/publish .
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "DotnetDockerLogs.Api.dll"]
