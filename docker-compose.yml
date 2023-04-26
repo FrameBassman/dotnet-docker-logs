@@ -9,6 +9,6 @@ services:
       - ASPNETCORE_URLS=http://+:80
     ports:
       - 80:80
-#    volumes:
-#      - .:/app/logs:rw
+    volumes:
+      - /var/log/dotnet-docker-logs:/app/logs:rw
     tty: true
